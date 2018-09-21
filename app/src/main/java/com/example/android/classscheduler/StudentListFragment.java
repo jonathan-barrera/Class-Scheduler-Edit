@@ -76,7 +76,7 @@ public class StudentListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Timber.d("oncreateview called");
+        Timber.d("oncreateview calledxx");
         // Inflate view
         View rootView = inflater.inflate(R.layout.fragment_student_list, container, false);
         super.onCreate(savedInstanceState);
@@ -123,6 +123,7 @@ public class StudentListFragment extends Fragment {
 
     @Override
     public void onResume() {
+        Timber.d("onresume calledxx");
         super.onResume();
 
         mAdapter.setClassData(mStudentList);

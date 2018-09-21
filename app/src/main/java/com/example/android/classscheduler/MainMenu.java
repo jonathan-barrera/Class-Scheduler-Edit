@@ -40,10 +40,14 @@ public class MainMenu extends AppCompatActivity {
 
         // Set up Timber
         Timber.plant(new Timber.DebugTree());
-        Timber.d("main menu oncreate called");
+        Timber.d("main menu oncreate calledxx");
 
         // Initialize the Firebase variables
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        if (mFirebaseAuth.getCurrentUser() != null) {
+            showFragments();
+        }
 
         // Set the title
         setTitle("Class Scheduler");
@@ -88,6 +92,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        Timber.d("onresume calledxx");
         super.onResume();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
@@ -99,13 +104,15 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void onSignedInInitialize(String username) {
+        Timber.d("onsignedininitlize calledxx");
         // Keep track of the userId in order to show the user the proper classes/students
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(USER_ID_SHARED_PREF_KEY, username);
         editor.apply();
 
-        showFragments();
+        // Show fragments only if user is logged in
+        //showFragments();
     }
 
     private void showFragments(){
