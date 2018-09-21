@@ -1,0 +1,48 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- App bar style -->
+    <style name="AppBarStyle" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!-- Remove the shadow below the app bar -->
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Main Menu App Bar Style -->
+    <style name="MainMenuAppBarStyle" parent="AppTheme">
+        <!-- Remove the shadow below the app bar -->
+        <item name="actionBarStyle">@style/AppBarStyle</item>
+    </style>
+
+    <style name="dayofweek_check_box_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="dayofweek_time_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

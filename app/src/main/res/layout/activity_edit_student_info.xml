@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".EditStudentInfo">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:contentDescription="@string/add_photo"
+            android:id="@+id/gray_circle_background_view"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/gray_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:contentDescription="@string/a_plus_sign_indicating_a_photo_may_be_added"
+            android:id="@+id/add_sign_image_view"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:srcCompat="@drawable/ic_baseline_add_24px"
+            app:layout_constraintBottom_toTopOf="@+id/gray_circle_background_view"
+            app:layout_constraintEnd_toStartOf="@+id/gray_circle_background_view"
+            app:layout_constraintStart_toEndOf="@+id/gray_circle_background_view"
+            app:layout_constraintTop_toBottomOf="@+id/gray_circle_background_view"
+            app:layout_constraintVertical_bias="0.53" />
+
+        <TextView
+            android:id="@+id/add_photo_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/add_photo"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gray_circle_background_view"
+            app:layout_constraintEnd_toEndOf="@+id/gray_circle_background_view"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/gray_circle_background_view"
+            app:layout_constraintTop_toBottomOf="@+id/add_sign_image_view"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/student_info_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gray_circle_background_view">
+
+            <TextView
+                android:id="@+id/student_name_label_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/name"
+                android:textSize="@dimen/label_text_size" />
+
+            <EditText
+                android:imeOptions="actionDone"
+                android:id="@+id/student_name_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/student_edit_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/student_info_linear_layout">
+
+            <TextView
+                android:id="@+id/student_sex_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:text="@string/sex"
+                android:textSize="@dimen/label_text_size" />
+
+            <Spinner
+                android:id="@+id/student_sex_spinner"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="2"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_views_height"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <TextView
+                android:id="@+id/student_age_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:text="@string/birthdate"
+                android:textSize="@dimen/label_text_size" />
+
+            <RelativeLayout
+                android:id="@+id/student_birthdate_relative_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:onClick="openDatePicker">
+
+                <TextView
+                    android:id="@+id/student_birthdate_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingEnd="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="4dp"
+                    android:textSize="@dimen/label_text_size"
+                    tools:text="August 13, 1991" />
+
+                <ImageView
+                    android:contentDescription="@string/a_calendar_image_indicating_a_date_may_chosen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingRight="12dp"
+                    android:scaleType="fitEnd"
+                    app:srcCompat="@drawable/ic_baseline_calendar_today_24px" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <TextView
+                android:id="@+id/student_grade_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/grade"
+                android:textSize="@dimen/label_text_size" />
+
+            <EditText
+                android:imeOptions="actionDone"
+                android:id="@+id/student_grade_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="number"
+                android:textSize="@dimen/student_edit_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <TextView
+                android:id="@+id/student_classes_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:onClick="openCreateClassesActivity"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/classes"
+                android:textSize="@dimen/label_text_size" />
+
+            <LinearLayout
+                android:id="@+id/student_classes_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/student_classes_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/student_edit_text_size"
+                    android:visibility="gone"
+                    android:layout_marginBottom="8dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/edit_student_add_class_image_button"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:onClick="openClassPicker"
+                        android:text="@string/add_class"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/student_edit_text_size" />
+
+                    <TextView
+                        android:id="@+id/edit_student_remove_class_image_button"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="openClassRemover"
+                        android:text="@string/remove_class"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/student_edit_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/saving_student_progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

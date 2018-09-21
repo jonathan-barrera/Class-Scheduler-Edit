@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "1026076848991",
+    "firebase_url": "https://classscheduler-afe0d.firebaseio.com",
+    "project_id": "classscheduler-afe0d",
+    "storage_bucket": "classscheduler-afe0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026076848991:android:a6fc85a156fd1e9b",
+        "android_client_info": {
+          "package_name": "com.example.android.classscheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026076848991-uf836h4bb5tkcqjiibcn1rr9493kilvg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.classscheduler",
+            "certificate_hash": "1fa6d32d661d9bea8a3bd84734ccfcd963836c35"
+          }
+        },
+        {
+          "client_id": "1026076848991-34bcc3dftcohl46vpsric592kooqhsuc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1026076848991-34bcc3dftcohl46vpsric592kooqhsuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd13OLjuFaTMms6djzfipVAAfTmJjGHj0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026076848991-34bcc3dftcohl46vpsric592kooqhsuc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

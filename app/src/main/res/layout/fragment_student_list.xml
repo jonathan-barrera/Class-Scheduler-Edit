@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.classscheduler.StudentListFragment">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/student_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/student_list_fab"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:tint="@android:color/white"
+            android:src="@android:drawable/ic_input_add"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fab_margin"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:id="@+id/student_list_empty_view"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="No internet connection."/>
+
+        <ProgressBar
+            android:id="@+id/student_list_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+</RelativeLayout>

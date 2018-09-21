@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    tools:context="com.example.android.classscheduler.CreateClassesActivity">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/title_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_label_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:text="@string/title"
+                android:textSize="@dimen/label_text_size" />
+
+            <EditText
+                android:id="@+id/title_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="text"
+                android:textSize="@dimen/student_edit_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subject_info_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/subject_label_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/subject"
+                android:textSize="@dimen/label_text_size" />
+
+            <EditText
+                android:id="@+id/subject_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="text"
+                android:textSize="@dimen/student_edit_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teacher_info_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/teacher_label_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:text="@string/teacher"
+                android:textSize="@dimen/label_text_size" />
+
+            <EditText
+                android:id="@+id/teacher_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="text"
+                android:textSize="@dimen/student_edit_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/schedule_info_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/sunday_schedule_check_box"
+                    android:text="@string/sunday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/sunday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/monday_schedule_check_box"
+                    android:text="@string/monday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/monday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/tuesday_schedule_check_box"
+                    android:text="@string/tuesday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/tuesday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/wednesday_schedule_check_box"
+                    android:text="@string/wednesday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/wednesday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/thursday_schedule_check_box"
+                    android:text="@string/thursday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/thursday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/friday_schedule_check_box"
+                    android:text="@string/friday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/friday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/saturday_schedule_check_box"
+                    android:text="@string/saturday"
+                    style="@style/dayofweek_check_box_style" />
+
+                <TextView
+                    android:id="@+id/saturday_schedule_time_text_view"
+                    tools:text="9:00-10:00"
+                    style="@style/dayofweek_time_text_view_style" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

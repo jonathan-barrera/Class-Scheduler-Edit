@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.classscheduler">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:configChanges="keyboardHidden|orientation|screenSize">
+
+        <activity
+            android:name=".EditStudentInfo"
+            android:parentActivityName=".StudentProfile"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.classscheduler.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".StudentProfile"
+            android:label="@string/title_activity_student_profile"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainMenu" />
+
+        <activity android:name=".CreateClassesActivity"
+            android:parentActivityName=".MainMenu"/>
+
+        <activity
+            android:name=".ClassDetailsActivity"
+            android:parentActivityName=".StudentProfile" />
+
+        <activity android:name=".MainMenu"
+            android:launchMode="singleTop"
+            android:theme="@style/MainMenuAppBarStyle"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".widget.TodaysClassesWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/todays_classes_widget_info" />
+        </receiver>
+
+        <service android:name=".widget.TodaysClassesWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <service android:name=".UpdateRegisteredClassesService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false" />
+    </application>
+
+</manifest>

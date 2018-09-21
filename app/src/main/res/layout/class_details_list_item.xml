@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+
+    <TextView
+        tools:text="Level 4 Biology"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/class_details_title_text_view"/>
+
+    <TextView
+        tools:text="Science"
+        android:textSize="18sp"
+        android:id="@+id/class_details_teacher_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        tools:text="Mr. Barrera"
+        android:textSize="18sp"
+        android:id="@+id/class_details_subject_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18sp"
+        tools:text="Monday 9:00am - 10:00am\nSunday"
+        android:id="@+id/class_details_schedule_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="4dp"
+        android:paddingBottom="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <SearchView
+        android:id="@+id/class_picker_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/class_picker_list_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:text="@string/dismiss"
+            android:id="@+id/class_picker_dismiss_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:text="@string/new_class"
+            android:id="@+id/class_picker_create_class_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
