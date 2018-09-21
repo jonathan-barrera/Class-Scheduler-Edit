@@ -29,6 +29,7 @@ public class MainMenu extends AppCompatActivity {
     // Member variables
     public static final String SHARED_PREFS = "shared-prefs";
     public static final String USER_ID_SHARED_PREF_KEY = "user-id-pref-key";
+    private CategoryFragmentPagerAdapter mAdapter;
 
     // Request code values
     private static final int RC_SIGN_IN = 123;
@@ -45,10 +46,6 @@ public class MainMenu extends AppCompatActivity {
         // Initialize the Firebase variables
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        if (mFirebaseAuth.getCurrentUser() != null) {
-            showFragments();
-        }
-
         // Set the title
         setTitle("Class Scheduler");
 
@@ -59,6 +56,7 @@ public class MainMenu extends AppCompatActivity {
                 if (firebaseUser != null) {
                     // User is signed in
                     onSignedInInitialize(firebaseUser.getUid());
+                    showFragments();
                 } else {
                     // User is signed out
                     startActivityForResult(AuthUI.getInstance()
@@ -116,19 +114,21 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void showFragments(){
-        // Set up View Pager to allow user to swipe between fragments
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        if (mAdapter == null) {
+            // Set up View Pager to allow user to swipe between fragments
+            ViewPager viewPager = findViewById(R.id.viewpager);
 
-        // Adapter that sets fragments in correct positions
-        CategoryFragmentPagerAdapter adapter = new CategoryFragmentPagerAdapter(
-                getSupportFragmentManager(), MainMenu.this);
+            // Adapter that sets fragments in correct positions
+            mAdapter = new CategoryFragmentPagerAdapter(
+                    getSupportFragmentManager(), MainMenu.this);
 
-        // Set adapter to view pager
-        viewPager.setAdapter(adapter);
+            // Set adapter to view pager
+            viewPager.setAdapter(mAdapter);
 
-        // Give the TabLayout the ViewPager
-        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
-        tabLayout.setupWithViewPager(viewPager);
+            // Give the TabLayout the ViewPager
+            TabLayout tabLayout = findViewById(R.id.sliding_tabs);
+            tabLayout.setupWithViewPager(viewPager);
+        }
     }
 
     @Override
