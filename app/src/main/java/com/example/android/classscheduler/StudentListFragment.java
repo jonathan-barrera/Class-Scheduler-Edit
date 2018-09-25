@@ -76,7 +76,6 @@ public class StudentListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Timber.d("oncreateview calledxx");
         // Inflate view
         View rootView = inflater.inflate(R.layout.fragment_student_list, container, false);
         super.onCreate(savedInstanceState);
@@ -123,7 +122,6 @@ public class StudentListFragment extends Fragment {
 
     @Override
     public void onResume() {
-        Timber.d("onresume calledxx");
         super.onResume();
 
         mAdapter.setClassData(mStudentList);
@@ -139,7 +137,9 @@ public class StudentListFragment extends Fragment {
             mValueEventListener = new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Timber.d("ondatachange studentlistfragment called");
+                    // First clear student list
+                    mStudentList.clear();
+
                     Iterable<DataSnapshot> children = dataSnapshot.getChildren();
 
                     for (DataSnapshot child : children) {
@@ -149,9 +149,6 @@ public class StudentListFragment extends Fragment {
 
                     mProgressBar.setVisibility(View.GONE);
                     mAdapter.notifyDataSetChanged();
-                    if (mSavedState == null) {
-                        Timber.d("msavedstate is null called");
-                    }
                     mRecyclerView.getLayoutManager().onRestoreInstanceState(mSavedState);
 
                     if (mStudentList == null || mStudentList.size() == 0) {
@@ -190,24 +187,16 @@ public class StudentListFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        Timber.d("onsaveinstancestate studentlistfragment called");
         super.onSaveInstanceState(outState);
         mSavedState = mRecyclerView.getLayoutManager().onSaveInstanceState();
-        if (mSavedState == null) {
-            Timber.d("mSavedState is null in onsaveinstancestate called");
-        }
         outState.putParcelable(BUNDLE_RECYCLER_VIEW_KEY, mSavedState);
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-        Timber.d("onviewstaterestored studentlistfragment called");
         super.onViewStateRestored(savedInstanceState);
         if (savedInstanceState != null) {
             mSavedState = savedInstanceState.getParcelable(BUNDLE_RECYCLER_VIEW_KEY);
-            if (mSavedState == null) {
-                Timber.d("mSavedState is null in onviewrestored called");
-            }
         }
     }
 
@@ -243,7 +232,6 @@ public class StudentListFragment extends Fragment {
                 }
                 return true;
             }
-
         });
     }
 
@@ -265,11 +253,5 @@ public class StudentListFragment extends Fragment {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
-    }
-
-    @Override
-    public void onDestroyView() {
-        Timber.d("view destroyed called");
-        super.onDestroyView();
     }
 }
